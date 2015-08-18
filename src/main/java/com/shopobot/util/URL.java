@@ -1,8 +1,11 @@
 package com.shopobot.util;
 
-import java.io.*;
+import java.io.UnsupportedEncodingException;
 import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This class represents a URL for an internet resource. It is not to be
@@ -750,8 +753,8 @@ public class URL implements Iterable<URL.Parameter> {
   /**
    * Removes all parameters with the given name from the URL.
    * 
-   * @param The
-   *          name of the parameter(s) to remove. Null or empty string will
+   * @param name The
+   *          name(s) of the parameter(s) to remove. Null or empty string will
    *          cause no changes to occur.
    * @return This object for chaining.
    */
@@ -1146,7 +1149,7 @@ public class URL implements Iterable<URL.Parameter> {
    * //true new URL("www.subdomain.example.com").matchesAuthority(
    * "www.subdomain.example.com"); //true
    * 
-   * @param string
+   * @param authority
    *          A string reresenting the authority to check against this url.
    * @return true if the authority matches, false in all other cases (including
    *         if a null or empty parameter is passed).
@@ -1177,8 +1180,6 @@ public class URL implements Iterable<URL.Parameter> {
    * //true new URL("www.subdomain.example.com").matchesAuthority(
    * "www.subdomain.example.com"); //true
    * 
-   * @param string
-   *          A string reresenting the authority to check against this url.
    * @return true if the authority matches, false in all other cases (including
    *         if a null or empty parameter is passed).
    */
